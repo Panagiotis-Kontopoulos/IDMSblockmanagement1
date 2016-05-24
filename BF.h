@@ -28,13 +28,13 @@
 #define BFE_CANNOTDESTROYFILE		-23
 
 
-/* H metavlhth opou kataxwreitai o kwdikos tou teleftaiou sfalmatos */
+/* Last error index */
 int BF_Errno;
 
-/* Kathorizei to mege8os enos block apo to arxeio  */
+/* Block size from the file */
 #define BLOCK_SIZE 512
 
-/* Arxikopoiei tin eswterikh plhroforia tin opoia krataei to epipedo block arxeiwn (BF) */
+/* Initialize information for block level (BF) */
 void BF_Init();
 
 

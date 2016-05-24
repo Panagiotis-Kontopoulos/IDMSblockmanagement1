@@ -373,17 +373,16 @@ printf("mphke 1 - temp1\n");
 						}
 					}
 				}
-				else	// den iparxei parapano apo enas deikths ston pointer...ara diplasiase ton pinaka katakermatismu
-				{	counter *= 2;	// diplasiasmos tou counter 
-					//memcpy(block + (BLOCK_SIZE - 2*sizeof(int)), &counter, sizeof(int));// emimerosh tou counter
-					if(counter <= (BLOCK_SIZE/sizeof(int)))	// an o pinakas katakermatismu xoraei se ena block(block evretiriou)
-					{	for(i=0; i < counter/2; i++)	// arxikopoihsh ton neon theseon me ton paleon
+				else
+				{	counter *= 2;	// double counter 
+					if(counter <= (BLOCK_SIZE/sizeof(int)))	// if hash table fits in one block
+					{	for(i=0; i < counter/2; i++)	// initialize new positions with the old ones
 						{	
 							memcpy(block + (i+counter/2)*sizeof(int), block + i*sizeof(int), sizeof(int));
 							 
 						}
 					}
-					else	// o diplasios pinakas katakermatismu den xoraei se ena block
+					else
 					{	if(pindex > 1)
 						{	;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 						// prospelash tou epomenou block evretiriou
